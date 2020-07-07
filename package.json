@@ -6,7 +6,7 @@
   "description": "A simple application about web browsers",
   "version": "0.1.0",
   "devDependencies": {
-    "electron": "^1.7.8",
+    "electron": "^9.1.0",
     "electron-packager": "^9.1.0"
   },
   "scripts": {
