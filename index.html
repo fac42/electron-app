@@ -1,164 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Alex Chang">
-    <meta name="description" content="A basic description and comparison of web browsers.">
-    <meta name="keywords" content="web browser, firefox, edge, chrome">
-    <title>Modern Web Browsers</title>
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <!-- Icon Font -->
-    <link href="https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="Alex Chang">
+	<meta name="description" content="A basic description and comparison of web browsers.">
+	<meta name="keywords" content="web browser, firefox, edge, chrome">
+	<title>Modern Web Browsers</title>
+	<!-- Bootstrap 4 CSS -->
+	<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<!-- Icon Font -->
+	<link href="https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body>
-<div class="wrapper">
-<!-- Header and Navigation -->
-<header>
-    <div class="container">
-        <h1 class="display-3">Modern Web Browsers</h1>
-        <nav class="navbar navbar-expand-md navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="start.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="firefox.html">Firefox</a></li>
-                    <li class="nav-item"><a class="nav-link" href="chrome.html">Chrome</a></li>
-                    <li class="nav-item"><a class="nav-link" href="edge.html">Edge</a></li>
-                    <li class="nav-item"><a class="nav-link" href="vivaldi.html">Vivaldi</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-<!-- Main Content -->
-<main id="main-content">
-</main>
-<!-- About Modal -->
-<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title mx-auto" id="modalLabel">About</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-6">
-                            <h2 class="orange d-flex justify-content-center">Me!</h2>
-                            <p>This simple Electron application was written by <strong>Alex Chang</strong>, a student in the Seneca College Webmaster Program. This application was made using a mix of HTML5, CSS3, Bootstrap 4, JavaScript, JQuery, and was compiled with Electron.</p>
-                        </div>
-                        <div class="col-sm-12 col-lg-6">
-                            <h2 class="blue d-flex justify-content-center">Electron</h2>
-                            <p><strong>Electron</strong> (formerly Atom Shell) is an open-source software framework created by Cheng Zhao; it is currently developed by GitHub. Electron allows web developers specializing in HTML, CSS, and JavaScript to develop desktop applications by providing a frontend (utilizing Chromium) and backend (utilizing Node.js). For the end-user, a well developed and designed Electron application would be virtually identical in form and functionality to a traditional desktop application. The current version of Electron is <strong>1.7.8</strong>.</p>
-                            <p>Every Electron application, at the very minimum, requires the <strong>package.json</strong> file, the <strong>main.js</strong> file, and the <strong>index.html</strong> file. These three files provide the metadata, the main JavaScript code, and the graphical user interface of a Electron application. Once a developer has completed the design of their application, they can package their application for desktop use by using <strong>Electron Packager</strong>. Electron Packager is used to generate an executeable file, which can then be run on a variety of platforms, such as Windows, MacOS, or Linux.</p>
-                            <hr>
-                            <h3>Some applications made with Electron:</h3>
-                            <ul class="list-unstyled">
-                                <li><a class="text-info" href="https://code.visualstudio.com/" target="_blank" title="Visual Studio Code Text Editor"><span class="devicons devicons-visualstudio"></span> Visual Studio Code</a></li>
-                                <li><a class="text-info" href="https://atom.io/" target="_blank" title="Atom Text Editor"><span class="devicons devicons-atom"></span>  Atom</a></li>
-                                <li><a class="text-info" href="https://desktop.github.com/" target="_blank" title="GitHub Desktop"><span class="devicons devicons-github_badge"></span> GitHub Desktop</a></li>
-                            </ul>
-                            <hr>
-                            <h3>Other Resources:</h3>
-                            <ul class="list-unstyled">
-                                <li><a class="text-success" href="https://nodejs.org" target="_blank" title="Node.js">Node.js (required for Electron)</a></li>
-                                <li><a class="text-success" href="https://electron.atom.io/docs/tutorial/quick-start/" target="_blank" title="Quick Start Guide for Electron">Quick Start Guide for Electron</a></li>
-                                <li><a class="text-success" href="https://www.christianengvall.se/electron-packager-tutorial/" target="_blank" title="Electron Packaging Tutorial">Electron Packaging Tutorial</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<footer>
-    <div class="container">
-        <div class="row">
-            <!-- Dev Console Button -->
-            <div class="col d-flex justify-content-start">
-                    <button type="button" class="btn btn-outline-primary" id="devConsole">Toggle Dev. Console</button>
-            </div>
-            <!-- About Modal Button -->
-            <div class="col d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#aboutModal">About This App</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <p><small>Alex Chang &copy; <span id="date"></span></small></p>
-            </div>
-        </div>
-    </div>    
-</footer>
-</div>
-    <script>
-        window.jQuery = window.$ = require('./js/jquery-3.2.1.min.js');
-    </script>
-    <script src="js/popper.min.js"></script>
-    </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Setting a dynamic year in JS
-            var date = new Date();
-            date = date.getFullYear();
-            $('#date').text(date);
-            // Loading the contents of start.html first when app/page is opened
-            $.ajax({
-                    url: 'start.html',
-                    dataType: 'html',
-                    success: function(start) {
-                        $('#main-content').html(start);
-                }
-            })
-            // Adding and removing .active class from navigation <li>
-            $('ul.navbar-nav').children('li').on('click', function(e) {
-                $(this).siblings().removeClass('active');
-                $(this).addClass('active');
-            });
-            // AJAX loading content from navigation <a>
-            $('ul.navbar-nav').find('a').on('click', function(e){
-                e.preventDefault();
-                $.ajax({
-                    url: $(this).attr('href'),
-                    dataType: 'html',
-                    success: function(content) {
-                        $('#main-content').fadeOut(350, function() {$(this).html(content); 
-                        }).fadeIn(350);
-                    }                    
-                })
-                // Checking for AJAX functionality
-                // .done(function(){
-                //     alert('Success!');
-                // });
-            });
-            // Activating the Developer Console
-            $('#devConsole').on('click', function(){
-                require('electron').remote.getCurrentWindow().webContents.toggleDevTools({
-                    mode: 'bottom'
-                });
-            });
-            // Open links in external browser, instead of using Electron's Chromium frontend
-            var shell = require('electron').shell;
-            $(document).on('click', 'a[href^="http"]', function(event) {
-                event.preventDefault();
-                shell.openExternal(this.href);
-            });
-        });
-    </script>
+	<div class="wrapper">
+		<!-- Header and Navigation -->
+		<header>
+			<div class="container">
+				<h1 class="display-3">Modern Web Browsers</h1>
+				<nav class="navbar navbar-expand-md navbar-light">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item active"><a class="nav-link" href="start.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="firefox.html">Firefox</a></li>
+							<li class="nav-item"><a class="nav-link" href="chrome.html">Chrome</a></li>
+							<li class="nav-item"><a class="nav-link" href="edge.html">Edge</a></li>
+							<li class="nav-item"><a class="nav-link" href="vivaldi.html">Vivaldi</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Main Content -->
+		<main id="main-content">
+		</main>
+		<!-- About Modal -->
+		<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title mx-auto" id="modalLabel">About</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-12 col-lg-6">
+									<h2 class="orange d-flex justify-content-center">Me!</h2>
+									<p>This simple Electron application was written by <strong>Alex Chang</strong>, a
+										student in the Seneca College Webmaster Program. This application was made using
+										a mix of HTML5, CSS3, Bootstrap 4, JavaScript, JQuery, and was compiled with
+										Electron.</p>
+								</div>
+								<div class="col-sm-12 col-lg-6">
+									<h2 class="blue d-flex justify-content-center">Electron</h2>
+									<p><strong>Electron</strong> (formerly Atom Shell) is an open-source software
+										framework created by Cheng Zhao; it is currently developed by GitHub. Electron
+										allows web developers specializing in HTML, CSS, and JavaScript to develop
+										desktop applications by providing a frontend (utilizing Chromium) and backend
+										(utilizing Node.js). For the end-user, a well developed and designed Electron
+										application would be virtually identical in form and functionality to a
+										traditional desktop application. The current version of Electron is
+										<strong>1.7.8</strong>.</p>
+									<p>Every Electron application, at the very minimum, requires the
+										<strong>package.json</strong> file, the <strong>main.js</strong> file, and the
+										<strong>index.html</strong> file. These three files provide the metadata, the
+										main JavaScript code, and the graphical user interface of a Electron
+										application. Once a developer has completed the design of their application,
+										they can package their application for desktop use by using <strong>Electron
+											Packager</strong>. Electron Packager is used to generate an executeable
+										file, which can then be run on a variety of platforms, such as Windows, MacOS,
+										or Linux.</p>
+									<hr>
+									<h3>Some applications made with Electron:</h3>
+									<ul class="list-unstyled">
+										<li><a class="text-info" href="https://code.visualstudio.com/" target="_blank"
+												title="Visual Studio Code Text Editor"><span
+													class="devicons devicons-visualstudio"></span> Visual Studio
+												Code</a></li>
+										<li><a class="text-info" href="https://atom.io/" target="_blank"
+												title="Atom Text Editor"><span class="devicons devicons-atom"></span>
+												Atom</a></li>
+										<li><a class="text-info" href="https://desktop.github.com/" target="_blank"
+												title="GitHub Desktop"><span
+													class="devicons devicons-github_badge"></span> GitHub Desktop</a>
+										</li>
+									</ul>
+									<hr>
+									<h3>Other Resources:</h3>
+									<ul class="list-unstyled">
+										<li><a class="text-success" href="https://nodejs.org" target="_blank"
+												title="Node.js">Node.js (required for Electron)</a></li>
+										<li><a class="text-success"
+												href="https://electron.atom.io/docs/tutorial/quick-start/"
+												target="_blank" title="Quick Start Guide for Electron">Quick Start Guide
+												for Electron</a></li>
+										<li><a class="text-success"
+												href="https://www.christianengvall.se/electron-packager-tutorial/"
+												target="_blank" title="Electron Packaging Tutorial">Electron Packaging
+												Tutorial</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<!-- Dev Console Button -->
+					<div class="col d-flex justify-content-start">
+						<button type="button" class="btn btn-outline-primary" id="devConsole">Toggle Dev.
+							Console</button>
+					</div>
+					<!-- About Modal Button -->
+					<div class="col d-flex justify-content-end">
+						<button type="button" class="btn btn-outline-success" data-toggle="modal"
+							data-target="#aboutModal">About This App</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col d-flex justify-content-center">
+						<p><small>Alex Chang &copy; <span id="date"></span></small></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+		import jQuery from './node_modules/jquery/dist/jquery.slim.js';
+		window.$ = jQuery;
+	</script>
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// Setting a dynamic year in JS
+			var date = new Date();
+			date = date.getFullYear();
+			$('#date').text(date);
+			// Loading the contents of start.html first when app/page is opened
+			$.ajax({
+				url: 'start.html',
+				dataType: 'html',
+				success: function (start) {
+					$('#main-content').html(start);
+				}
+			})
+			// Adding and removing .active class from navigation <li>
+			$('ul.navbar-nav').children('li').on('click', function (e) {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+			});
+			// AJAX loading content from navigation <a>
+			$('ul.navbar-nav').find('a').on('click', function (e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					dataType: 'html',
+					success: function (content) {
+						$('#main-content').fadeOut(350, function () {
+							$(this).html(content);
+						}).fadeIn(350);
+					}
+				})
+			});
+			// Activating the Developer Console
+			$('#devConsole').on('click', function () {
+				require('electron').remote.getCurrentWindow().webContents.toggleDevTools({
+					mode: 'bottom'
+				});
+			});
+			// Open links in external browser, instead of using Electron's Chromium frontend
+			var shell = require('electron').shell;
+			$(document).on('click', 'a[href^="http"]', function (event) {
+				event.preventDefault();
+				shell.openExternal(this.href);
+			});
+		});
+	</script>
 </body>
+
 </html>
