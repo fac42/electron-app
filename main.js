@@ -2,26 +2,26 @@
 const electron = require('electron');
 
 // Access the app and BrowserWindow modules
-const {app, BrowserWindow} = electron;
+const { app, BrowserWindow } = electron;
 
 // Create the browser window
-app.on('ready', function (){
-    mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 800,
-        resizable: true
-    });
-
-    // Remove the Menubar
-    mainWindow.setMenu(null);
-    // Load HTML file into mainWindow
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
-
-    // Activate Dev. Console
-    // mainWindow.webContents.openDevTools({
-    //     mode: 'bottom'
-    // });
-});
+app.whenReady().then(
+    function() {
+        mainWindow = new BrowserWindow({
+            width: 1000,
+            height: 800,
+            resizable: true,
+            webPreferences: {
+                devTools: true,
+                nodeIntegration: true
+            }
+        });
+        // Remove the Menubar
+        mainWindow.setMenu(null);
+        // Load HTML file into mainWindow
+        mainWindow.loadFile('./index.html');
+    }
+)
 
 // Quit when all windows are closed
 app.on('window-all-closed', () => {
@@ -31,7 +31,7 @@ app.on('window-all-closed', () => {
 })
 // MacOS window functionality
 app.on('activate', () => {
-    if (win === null) {
-      createWindow()
+    if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow()
     }
 })
