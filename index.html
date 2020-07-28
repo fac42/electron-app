@@ -9,11 +9,11 @@
 	<meta name="keywords" content="web browser, firefox, edge, chrome">
 	<title>Modern Web Browsers</title>
 	<!-- Bootstrap 4 CSS -->
-	<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<!-- Icon Font -->
 	<link href="https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
 	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -29,11 +29,21 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
-							<li class="nav-item active"><a class="nav-link" href="./start.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="./components/firefox.html">Firefox</a></li>
-							<li class="nav-item"><a class="nav-link" href="./components/chrome.html">Chrome</a></li>
-							<li class="nav-item"><a class="nav-link" href="./components/edge.html">Edge</a></li>
-							<li class="nav-item"><a class="nav-link" href="./components/vivaldi.html">Vivaldi</a></li>
+							<li class="nav-item">
+								<a class="nav-link" href="./components/start.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./components/firefox.html">Firefox</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./components/chrome.html">Chrome</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./components/edge.html">Edge</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./components/vivaldi.html">Vivaldi</a>
+							</li>
 						</ul>
 					</div>
 				</nav>
@@ -48,7 +58,6 @@
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title mx-auto" id="modalLabel">About</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -57,10 +66,10 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-sm-12 col-lg-6">
-									<h2 class="orange d-flex justify-content-center">Me!</h2>
+									<h2 class="orange d-flex justify-content-center">About Me</h2>
 									<p>This simple Electron application was written by <strong>Alex Chang</strong>, a
 										student in the Seneca College Webmaster Program. This application was made using
-										a mix of HTML5, CSS3, Bootstrap 4, JavaScript, JQuery, and was compiled with
+										a mix of HTML5, CSS3, Bootstrap 4, ES6 JavaScript, jQuery, and was compiled with
 										Electron.</p>
 								</div>
 								<div class="col-sm-12 col-lg-6">
@@ -100,16 +109,18 @@
 									<hr>
 									<h3>Other Resources:</h3>
 									<ul class="list-unstyled">
-										<li><a class="text-success" href="https://nodejs.org" target="_blank"
-												title="Node.js">Node.js (required for Electron)</a></li>
-										<li><a class="text-success"
+										<li>
+											<a class="text-success" href="https://nodejs.org" target="_blank"
+												title="Node.js">Node.js (required for Electron)
+											</a>
+										</li>
+										<li>
+											<a class="text-success"
 												href="https://electron.atom.io/docs/tutorial/quick-start/"
 												target="_blank" title="Quick Start Guide for Electron">Quick Start Guide
-												for Electron</a></li>
-										<li><a class="text-success"
-												href="https://www.christianengvall.se/electron-packager-tutorial/"
-												target="_blank" title="Electron Packaging Tutorial">Electron Packaging
-												Tutorial</a></li>
+												for Electron
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -143,57 +154,49 @@
 			</div>
 		</footer>
 	</div>
-	<script>
-		import jQuery from './node_modules/jquery/dist/jquery.slim.js';
-		window.$ = jQuery;
-	</script>
-	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			// Setting a dynamic year in JS
-			var date = new Date();
-			date = date.getFullYear();
-			$('#date').text(date);
-			// Loading the contents of start.html first when app/page is opened
-			$.ajax({
-				url: 'start.html',
-				dataType: 'html',
-				success: function (start) {
-					$('#main-content').html(start);
-				}
-			})
-			// Adding and removing .active class from navigation <li>
-			$('ul.navbar-nav').children('li').on('click', function (e) {
-				$(this).siblings().removeClass('active');
-				$(this).addClass('active');
-			});
-			// AJAX loading content from navigation <a>
-			$('ul.navbar-nav').find('a').on('click', function (e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href'),
-					dataType: 'html',
-					success: function (content) {
-						$('#main-content').fadeOut(350, function () {
-							$(this).html(content);
-						}).fadeIn(350);
-					}
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js" defer></script>
+	<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+	<script defer>
+		window.onload = () => {
+			// Setting date
+			const date = new Date().getFullYear();
+			document.getElementById("date").textContent = date;
+
+			// Set content utility function
+			async function setContent (contentPath) {
+				const mainContentContainer = document.getElementById("main-content");
+				let content = await fetch(contentPath).then(function(response) {
+					return response.text();
 				})
-			});
-			// Activating the Developer Console
-			$('#devConsole').on('click', function () {
-				require('electron').remote.getCurrentWindow().webContents.toggleDevTools({
-					mode: 'bottom'
+				mainContentContainer.innerHTML = content;
+			}
+			// Loading initial content
+			async function init() {
+				await setContent('./components/start.html')
+			}
+
+			// Loading content from components
+			const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+			navLinks.forEach((link) => {
+				link.addEventListener('click', function(event) {
+					event.preventDefault();
+					let href = this.getAttribute("href");
+					setContent(href);
+				})
+			})
+
+			// Open developer console
+			const devButton = document.getElementById("devConsole");
+			devButton.addEventListener('click', function(event) {
+				require('electron').remote.getCurrentWindow().webContents.openDevTools({
+	 				mode: 'bottom'
 				});
-			});
-			// Open links in external browser, instead of using Electron's Chromium frontend
-			var shell = require('electron').shell;
-			$(document).on('click', 'a[href^="http"]', function (event) {
-				event.preventDefault();
-				shell.openExternal(this.href);
-			});
-		});
+			})
+			init()
+		}
 	</script>
+	<script>if (window.module) module = window.module;</script>
 </body>
 
 </html>
